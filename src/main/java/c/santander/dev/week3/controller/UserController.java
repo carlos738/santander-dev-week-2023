@@ -5,6 +5,7 @@ import c.santander.dev.week3.service.UserService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 import org.springframework.http.ResponseEntity;
@@ -26,7 +27,7 @@ import java.util.stream.Collectors;
 public record UserController(UserService userService) {
     @GetMapping
     @Operation(summary = "Get all users",description = "Retrieve list of all registered users")
-    @ApiResponse(Value={
+    @ApiResponses(value = {
             @ApiResponse(responseCode = "200",description = "Operation successful")
     })
     public ResponseEntity<List<UserDto>> findAll(){

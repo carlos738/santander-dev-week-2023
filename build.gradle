@@ -28,3 +28,13 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+tasks.jar {
+	manifest {
+		attributes["Main-Class"] =  "c.santander.dev.week3.Application"
+	}
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
